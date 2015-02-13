@@ -224,8 +224,18 @@ def chaptercycle():
         print("I will create a shape")
         time.sleep(2)
         shape = int(input("How many sides do you want your shape to have? "))
+        colour = input("Which colour do you want it to be? RED/BLUE/GREEN/YELLOW")
         window = turtle.Screen()
         timmy = turtle.Turtle()
+        if colour == "red":
+            timmy.color('red')
+        elif colour == "blue":
+            timmy.color('blue')
+        elif colour == "green":
+            timmy.color('green')
+        elif colour == "yellow":
+            timmy.color('yellow')
+        timmy.speed(shape)
         for sides in range(shape):
             timmy.forward(1000/shape)
             timmy.right(360/shape)
