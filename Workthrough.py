@@ -1,10 +1,10 @@
 import time
-import string
+import turtle
 startup = True
 print("This is my Python's workthrough")
 def chaptercycle():
     time.sleep(2)
-    chapter = input("Press a number, one to thirteen, or type in 'quit' to quit. ")
+    chapter = input("Press a number, one to fifteen, or type in 'quit' to quit. ")
 
     if chapter == "quit":
         startup = False
@@ -217,6 +217,18 @@ def chaptercycle():
                 time.sleep(0.1)
         elif squared == "no":
             print("OK")
+
+    elif chapter == "15":
+        window = turtle.Screen()
+        timmy = turtle.Turtle()
+        timmy.forward(100)
+        timmy.right(90)
+        timmy.forward(100)
+        timmy.right(90)
+        timmy.forward(100)
+        timmy.right(90)
+        timmy.forward(100)
+        window.exitonclick()
 
     chaptercycle()
             
