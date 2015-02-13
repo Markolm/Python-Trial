@@ -262,6 +262,9 @@ def chaptercycle():
             if comp is True:
                 jhonny.right(360/shape)
         window.exitonclick()
+		
+    else:
+        print("Chapter does not exist")
 
     if startup == True:
         chaptercycle()
