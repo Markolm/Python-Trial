@@ -235,6 +235,6 @@ def chaptercycle():
 if startup is True:
     chaptercycle()
 
-time.sleep(2)
+time.sleep(3)
 
 
