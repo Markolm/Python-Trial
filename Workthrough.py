@@ -28,7 +28,6 @@ def chaptercycle():
         if q5 is 10:
             result = result+1
         print ("You got", result)
-        chaptercycle()
    
     elif chapter == "2":
         print("I will say if your first number is bigger than the last one")
@@ -43,7 +42,6 @@ def chaptercycle():
             print("It is")
         else:
             print("It's not")
-        chaptercycle()
     
     elif chapter == "3":
         print("Now I will use a list of words to play around")
@@ -77,7 +75,6 @@ def chaptercycle():
             lnames = input("Add a name ")
             names.append(lnames)
         print(names)
-        chaptercycle()
     
     elif chapter == "4":
         countdown = int(10)
@@ -88,7 +85,6 @@ def chaptercycle():
         print("0")
         time.sleep(1)
         print("Instead of using a lot of print() commands, I used while(),\nwhich is a loop command and it worked the same, maybe better.")
-        chaptercycle()
         
     elif chapter == "5":
         option = int(input("Now press 1 or 2 "))
@@ -97,7 +93,6 @@ def chaptercycle():
         elif option is 2:
             print("You pressed 2")
         print("This will be useful for this workthrough, it takes too much to go to the end")
-        chaptercycle()
     
     elif chapter == "6":
         print("This is a fully working simple calculator!")
@@ -106,50 +101,47 @@ def chaptercycle():
         time.sleep(1)
         operation = int(input("Now choose one of the actions, press a number, one to four "))
         if operation is 1:
-            print("Give me two numbers to add")
-            n1 = float(input("-"))
-            n2 = float(input("-"))
+            print("Give me two numbers to add ")
+            n1 = float(input("- "))
+            n2 = float(input("- "))
             print("The answer is", n1+n2)
         elif operation is 2:
-            print("Give me two numbers to subtract")
-            n1 = float(input("-"))
-            n2 = float(input("-"))
+            print("Give me two numbers to subtract ")
+            n1 = float(input("- "))
+            n2 = float(input("- "))
             print("The answer is", n1-n2)
         elif operation is 3:
-            print("Give me two numbers to mulitply")
-            n1 = float(input("-"))
-            n2 = float(input("-"))
+            print("Give me two numbers to mulitply ")
+            n1 = float(input("- "))
+            n2 = float(input("- "))
             print("The answer is", n1*n2)
         elif operation is 4:
-            print("Give me two numbers to divide")
-            n1 = float(input("-"))
-            n2 = float(input("-"))
+            print("Give me two numbers to divide ")
+            n1 = float(input("- "))
+            n2 = float(input("- "))
             print("The answer is", n1/n2)
-        chaptercycle()
         
     elif chapter == "7":
         invited = ["Mark", "Christian", "Adrien", "Pedro", "8NCoupon"]
         master = ["m78as."]
         print("Only certain people are invited to the party!\nYou must be using an editor to access this")
-        visitor = input("What's your name")
+        visitor = input("What's your name ")
         if visitor in invited:
             print("Welcome!")
         elif visitor in master:
             print("The codes are-\nMark\nChristian\nAdrien\n8NCoupon")
         else:
             print("Not invited!")
-        chaptercycle()
         
     elif chapter == "8":
         print("Multiplication Tables!")
         time.sleep(2)
-        tt = int(input("What times table do you want to learn?"))
-        aa = int(input("Up to how much?"))
+        tt = int(input("What times table do you want to learn? "))
+        aa = int(input("Up to how much? "))
         pp = int(tt*aa)
         yy = int(pp+1)
         for loopcon in range (tt,yy,tt):
             print(loopcon)
-        chaptercycle()
 
     elif chapter == "9":
         print("Counting to 100!")
@@ -168,7 +160,6 @@ def chaptercycle():
         for x in range(1,11):
             for y in range(1,11):
                 print(x,"x",y,"=",x*y)
-        chaptercycle()
                 
     elif chapter == "10": 
         for number in range(1000000):
@@ -177,7 +168,6 @@ def chaptercycle():
             if square>3969:
                 break
         print("I achieved one of the tasks!")
-        chaptercycle()
     
     elif chapter == "11":
         print("My way")
@@ -189,7 +179,6 @@ def chaptercycle():
             r2 = r2+1
             r1 = r1*r2 
         print(r1)
-        chaptercycle()
 
     elif chapter == "12":
         print("Not my way, but better")
@@ -199,28 +188,28 @@ def chaptercycle():
         for number in range(factorial):
             product = product*(number+1) 
         print(product)
-        chaptercycle()
 
     elif chapter == "13":
         def cycle():
             time.sleep(1)
-            decision = input("Enter proceed or quit ")
+            decision = input("Enter 'proceed' or 'exit' ")
             if decision == "proceed":
                 cycle()
             if decision == "exit":
-                chaptercycle()
+                print("Ending cycle")
+
         desres = int(0)
         print("This is about def")
         time.sleep(2)
-        print("NOTE, use ONLY quit and proceed to respond")
+        print("NOTE, use ONLY 'exit' and 'proceed' to respond")
         time.sleep(2)
-        print("Try proceed before quitting")
+        print("Try proceed before exitting")
         cycle()
 
     elif chapter == "14":
         print("This may lag")
         lag = 2
-        squared = input("Do you want to proceed? Type in 'yes' or 'no'. ")
+        squared = input("Do you want to proceed? Type in 'yes' or 'no' ")
         if squared == "yes":
             while lag>0:
                 lag = lag*lag
@@ -228,7 +217,8 @@ def chaptercycle():
                 time.sleep(0.1)
         elif squared == "no":
             print("OK")
-            chaptercycle()
+
+    chaptercycle()
             
     
 if startup is True:
