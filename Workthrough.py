@@ -219,15 +219,16 @@ def chaptercycle():
             print("OK")
 
     elif chapter == "15":
+        print("This is about the turtle import")
+        time.sleep(2)
+        print("I will create a shape")
+        time.sleep(2)
+        shape = int(input("How many sides do you want your shape to have? "))
         window = turtle.Screen()
         timmy = turtle.Turtle()
-        timmy.forward(100)
-        timmy.right(90)
-        timmy.forward(100)
-        timmy.right(90)
-        timmy.forward(100)
-        timmy.right(90)
-        timmy.forward(100)
+        for sides in range(shape):
+            timmy.forward(1000/shape)
+            timmy.right(360/shape)
         window.exitonclick()
 
     chaptercycle()
