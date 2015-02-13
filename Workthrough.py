@@ -1,8 +1,8 @@
 import time
 import turtle
-startup = True
 print("This is my Python's workthrough")
 def chaptercycle():
+    startup = True
     time.sleep(2)
     chapter = input("Press a number, one to fifteen, or type in 'quit' to quit. ")
 
@@ -224,28 +224,49 @@ def chaptercycle():
         print("I will create a shape")
         time.sleep(2)
         shape = int(input("How many sides do you want your shape to have? "))
-        colour = input("Which colour do you want it to be? RED/BLUE/GREEN/YELLOW")
-        window = turtle.Screen()
+        colour = input("Which colour do you want it to be? red/blue/green/yellow ")
+        companion = input("Do you want a companion? yes/no ")
         timmy = turtle.Turtle()
+        if companion == "yes":
+            jhonny = turtle.Turtle()
+            comp = True
+        elif companion == "no":
+            comp = False
         if colour == "red":
             timmy.color('red')
+            if comp is True:
+                jhonny.color('blue')
         elif colour == "blue":
             timmy.color('blue')
+            if comp is True:
+                jhonny.color('green')
         elif colour == "green":
             timmy.color('green')
+            if comp is True:
+                jhonny.color('yellow')
         elif colour == "yellow":
             timmy.color('yellow')
+            if comp is True:
+                jhonny.color('red')
         timmy.speed(shape)
+        if comp is True:
+            jhonny.speed(shape)
+        window = turtle.Screen()
+        if comp is True:
+            jhonny.left(20)
         for sides in range(shape):
             timmy.forward(1000/shape)
+            if comp is True:
+                jhonny.forward(500/shape)
             timmy.right(360/shape)
+            if comp is True:
+                jhonny.right(360/shape)
         window.exitonclick()
 
-    chaptercycle()
+    if startup == True:
+        chaptercycle()
             
-    
-if startup is True:
-    chaptercycle()
+chaptercycle()
 
 time.sleep(3)
 
