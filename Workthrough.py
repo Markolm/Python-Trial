@@ -165,9 +165,10 @@ def chaptercycle():
         time.sleep(2)
         print("Here is a better example, but it's not mine,\n:(")
         time.sleep(2)
-        for x in range(1,11):
-            for y in range(1,11):
-                print(x,"x",y,"=",x*y)
+		y = int(1)
+        for x in range(1,11):            
+            print(x,"x",y,"=",x*y)
+			y += 1
         chaptercycle()
                 
     elif chapter == "10": 
