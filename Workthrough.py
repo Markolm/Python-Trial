@@ -204,7 +204,7 @@ def chaptercycle():
     elif chapter == "13":
         def cycle():
             time.sleep(1)
-            decision = input("Enter proceed or quit")
+            decision = input("Enter proceed or quit ")
             if decision == "proceed":
                 cycle()
             if decision == "exit":
