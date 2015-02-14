@@ -1,10 +1,11 @@
 import time
 import turtle
+import re
 print("This is my Python's workthrough")
 def chaptercycle():
     startup = True
     time.sleep(2)
-    chapter = input("Press a number, one to fifteen, or type in 'quit' to quit. ")
+    chapter = input("Press a number, one to sixteen, or type in 'quit' to quit. ")
 
     if chapter == "quit":
         startup = False
@@ -262,7 +263,47 @@ def chaptercycle():
             if comp is True:
                 jhonny.right(360/shape)
         window.exitonclick()
-		
+
+    elif chapter == "16":
+        postcode = "[0-9][0-9][a-z][A-Z] [a-z][0-9][0-9]"
+        print("This about the 'regular expressions' import")
+        time.sleep(2)
+        print("It is a very useful code import, allowing quick data checks and validations")
+        time.sleep(2)
+        print("It can also validate stuff that you couldn't have done without this")
+        time.sleep(2)
+        print("For example, a postcode")
+        time.sleep(2)
+        print("You can type whatever letter or number, only if it follows the structure")
+        time.sleep(2)
+        print("Try typing in\nnumber/number/letter/capitalletter/space/letter/number/number")
+        pcinput = input("- ")
+        if re.search(postcode, pcinput):
+            print("Valid postcode! Try again, but write a different or wrong code.")
+        else:
+            print("Invalid postcode, try again!")
+        time.sleep(2)
+        print("Now for something more interactive!")
+        print("Lets see if you will guess the following sentence")
+        print("If you don't guess it you repeat")
+        inter = True
+        def regame():
+            phrase = input("Type in a 3-letter sentence ")
+            senres = 0
+            if re.search("^I", phrase):
+                senres += 1
+            if re.search("like", phrase):
+                senres += 1
+            if re.search("pizza$", phrase):
+                senres += 1
+            print("You got", senres, "words right")
+            if senres<3:
+                regame()
+        if inter == True:
+            inter = False
+            regame()
+        
+        	
     else:
         print("Chapter does not exist")
 
