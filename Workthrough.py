@@ -279,9 +279,9 @@ def chaptercycle():
         print("Try typing in\nnumber/number/letter/capitalletter/space/letter/number/number")
         pcinput = input("- ")
         if re.search(postcode, pcinput):
-            print("Valid postcode! Try again, but write a different or wrong code.")
+            print("Valid postcode! Try again later, but write a different or wrong code.")
         else:
-            print("Invalid postcode, try again!")
+            print("Invalid postcode!")
         time.sleep(2)
         print("Now for something more interactive!")
         print("Lets see if you will guess the following sentence")
