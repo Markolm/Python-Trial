@@ -5,9 +5,9 @@ print("This is my Python's workthrough")
 def chaptercycle():
     startup = True
     time.sleep(2)
-    chapter = input("Press a number, one to sixteen, or type in 'quit' to quit. ")
+    chapter = input("Press a number, one to sixteen, or type in 'q' to quit. ")
 
-    if chapter == "quit":
+    if ((chapter == "q") or (chapter == "Q") or (chapter == "quit")):
         startup = False
         print("Goodbye!")
         
