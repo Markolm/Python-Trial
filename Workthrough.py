@@ -288,16 +288,20 @@ def chaptercycle():
         print("If you don't guess it you repeat")
         inter = True
         def regame():
-            phrase = input("Type in a 3-letter sentence ")
+            phrase = input("Type in a 5-letter sentence ")
             senres = 0
-            if re.search("^I", phrase):
+            if re.search("^The", phrase):
                 senres += 1
-            if re.search("like", phrase):
+            if re.search("cake", phrase):
                 senres += 1
-            if re.search("pizza$", phrase):
+            if re.search("is", phrase):
+                senres += 1
+            if re.search("a", phrase):
+                senres += 1
+            if re.search("lie$", phrase):
                 senres += 1
             print("You got", senres, "words right")
-            if senres<3:
+            if senres<5:
                 regame()
         if inter == True:
             inter = False
