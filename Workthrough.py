@@ -1,6 +1,8 @@
+import argparse
 import time
 import turtle
 import re
+import os
 print("This is my Python's workthrough")
 def chaptercycle():
     startup = True
@@ -289,16 +291,13 @@ def chaptercycle():
         inter = True
         def regame():
             phrase = input("Type in a 5-letter sentence ")
+
             senres = 0
-            if re.search("^The", phrase):
+            if re.search("^I", phrase):
                 senres += 1
             if re.search("cake", phrase):
                 senres += 1
-            if re.search("is", phrase):
-                senres += 1
-            if re.search("a", phrase):
-                senres += 1
-            if re.search("lie$", phrase):
+            if re.search("pizza$", phrase):
                 senres += 1
             print("You got", senres, "words right")
             if senres<5:
@@ -307,7 +306,56 @@ def chaptercycle():
             inter = False
             regame()
         
-        	
+    elif chapter == "17":
+        parser = argparse.ArgumentParser()
+        parser.add_argument("echo", help="echo the string you use here")
+        args = parser.parse_args()
+        print(args.echo)
+
+    elif chapter == "18":
+        user = input("What is your user folder? ")
+        wr = open("C:\\Users\\"+user+"\\Desktop\\Test.txt","w")
+        wr.write("I can use the open function to open files like this one. Cool ain't it?")
+        wr.close()
+        x = open("C:\\Users\\"+user+"\\Desktop\\Test.txt","r")
+        for line in x:
+            print(line)
+        time.sleep(1)
+        print("And even better")
+        time.sleep(1)
+        os.startfile("C:\\Users\\"+user+"\\Desktop\\Test.txt")
+        print("You can find the text in your desktop")
+
+    elif chapter == "19":
+        user = input("What is your user folder? ")
+        atype = input("Do you want to open a 'browser' or 'app'? ")
+        if atype == "app":
+            app = input("What app on your desktop do you want to open? ")
+            os.system("start C:\\Users\\"+user+"\\Desktop\\"+app)
+        elif atype == "browser":
+            browser = input("What app on your desktop do you want to open? ")
+            os.system("start "+browser)
+        else:
+            print("Invalid choice")
+
+    elif chapter == "20":
+        user = input("What is your user folder? ")
+        wr = open("C:\\Users\\"+user+"\\Desktop\\Text.txt","w")
+        wr.write("Actuallythefirst word is large not like the rest.")
+        wr.close()
+        rd = open("C:\\Users\\"+user+"\\Desktop\\Text.txt","r")
+        global rword
+        rword = []
+        def readcycle():
+            rdword = (rd.read(1))
+            if rdword != " ":
+                rword.append(rdword)
+                readcycle()
+            else:
+                print(rword)
+        readcycle()
+        
+
     else:
         print("Chapter does not exist")
 
