@@ -2,19 +2,35 @@ import time
 import re
 pins = {"Jeremy":"1057", "Suzanne":"2736", "Vicki":"4659","Jason":"5691"}
 bal = {"Jeremy":"172.16", "Suzanne":"15.62", "Vicki":"23.91","Jason":"62.17"}
+blocks = {"Jeremy":"0", "Suzanne":"0", "Vicki":"0", "Jason":"0"}
 clients = ["Jeremy", "Suzanne", "Vicki", "Jason"]
 pinrule = "^[0-9][0-9][0-9][0-9]$"
 def session():
+    global block
     print("Welcome to Northern Frock")
     global user
     user = input("Please enter your card.(type username) ")
     if user in clients:
-        pin = input("Please enter your PIN ")
-        if pin == pins[user]:
-            menu()
+        block = int(blocks[user])
+        if block<3:
+            pin = input("Please enter your PIN ")
+            if pin == pins[user]:
+                menu()
+            else:
+                print("Incorrect PIN")
+                block = blocks[user]
+                block = int(block)+1
+                blocks[user] = str(block)
+                if int(block)<3:
+                    print(blocks[user])
+                    time.sleep(2)
+                    session()
+                else:
+                    print("Account blocked")
+                    time.sleep(2)
+                    session()
         else:
-            print("Incorrect PIN")
-            time.sleep(2)
+            print("Account is blocked")
             session()
     elif user == "99999":
         print("Bye!")
@@ -24,6 +40,7 @@ def session():
         session()
 
 def menu():
+    blocks[user] = "0"
     print("Welcome", user)
     print("1-Display balance")
     print("2-Withdraw funds")
