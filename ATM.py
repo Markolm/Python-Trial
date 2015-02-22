@@ -72,23 +72,17 @@ def menu():
         print("$10\n$20\n$40\n$60\n$80\n$100")
         wd = input("How much do you want to withdraw? ")
         if wd == "10":
-            nwbal = float(bal[user])
-            nwbal = nwbal-10
+            nwbal = (float(bal[user]))-10
         elif wd == "20":
-            nwbal = float(bal[user])
-            nwbal = nwbal-20
+            nwbal = (float(bal[user]))-20
         elif wd == "40":
-            nwbal = float(bal[user])
-            nwbal = nwbal-40
+            nwbal = (float(bal[user]))-40
         elif wd == "60":
-            nwbal = float(bal[user])
-            nwbal = nwbal-60
+            nwbal = (float(bal[user]))-60
         elif wd == "80":
-            nwbal = float(bal[user])
-            nwbal = nwbal-80
+            nwbal = float(bal[user])-80
         elif wd == "100":
-            nwbal = float(bal[user])
-            nwbal = nwbal-100
+            nwbal = float(bal[user])-100
         else:
             print("You can't withdraw this amount of money")
             time.sleep(2)
